@@ -1,0 +1,2 @@
+class HeatstrokeAlertsController < ApplicationController
+end
