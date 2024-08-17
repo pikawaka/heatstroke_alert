@@ -56,3 +56,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # cron
 gem 'whenever', require: false
+# scraping
+gem 'mechanize'
+# slack-notification
+gem "slack-notifier"
+gem "dotenv-rails"
