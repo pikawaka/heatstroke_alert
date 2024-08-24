@@ -1,19 +1,18 @@
+# 外部ファイルを読み込む
+require_relative 'get_heatstroke_alert'
+require_relative 'judge_wbgt'
+require_relative 'post_heatstroke_message_notification'
+
 class WebScraper
-  # 村上
-  # 熱中症予防情報サイトの情報をスクレイピングを使って取得
-  def self.get_heatstroke_alert(url)
-    
-  end
-  
-  # 上杉
-  # 取得したWBGTから基準値の範囲を判定
-  def self.judge_wbgt(wbgt)
-    
-  end
-  
-  # 小林
-  # アラートメッセージの通知
-  def self.post_heatstroke_message_notification
-    
+  # get_heatstroke_alert メソッドをトリガーにして、次のメソッドを呼び出す
+  def self.perform_task
+    # get_heatstroke_alert メソッドの実行
+    alert_data = GetHeatstrokeAlert.execute
+
+    # judge_wbgt メソッドを呼び出し、その結果を次のメソッドに渡す
+    wbgt_result = JudgeWbgt.evaluate(alert_data)
+
+    # post_heatstroke_message_notification メソッドを呼び出す
+    PostHeatstrokeMessageNotification.notify(wbgt_result)
   end
 end
