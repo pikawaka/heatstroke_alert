@@ -8,11 +8,6 @@ module Constants
   WBGT_ERROR = "WBGT_ERROR!!"
   REF_URL = "https://www.wbgt.env.go.jp/wbgt.php#:~:text=暑さ指数（WBGT（湿,提案された指標です%E3%80%82"
 
-  # DANGER_MESSAGE = "Heat stroke warning: Take necessary precautions."
-  # DANGER_MESSAGE = <<-"EOS"
-  #   危険！WBGTが31度以上です。熱中症のリスクが非常に高いです。外出を避け、涼しい場所で過ごしてください。必ず水分補給を行い、体調に十分注意してください。
-  # EOS
-
   DANGER_MESSAGE = <<-"EOS"
   危険！WBGTが31度以上です。熱中症のリスクが非常に高いです。外出を避け、涼しい場所で過ごしてください。必ず水分補給を行い、体調に十分注意してください。
  【参照サイト】
@@ -41,5 +36,6 @@ module Constants
  【参照サイト】
   #{REF_URL}
   EOS
+
   WBGT_ERROR_MESSAGE = "WBGT値の取得に失敗しました。"
 end
