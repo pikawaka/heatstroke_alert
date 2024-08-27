@@ -1,4 +1,3 @@
-# /lib/constants.rb
 module Constants
   DANGER = "DANGER!!!"
   HIGH_ALERT = "HIGH_ALERT!!"
