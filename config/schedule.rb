@@ -12,8 +12,8 @@ set :output, "#{Rails.root}/log/cron.log"
 
 # 30分ごとに実行されるバッチジョブの設定
 # whenever を使ってcronジョブを更新するには、以下のコマンドを実行
-# whenever --update-crontab
+# bundle exec whenever --update-crontab
 every 30.minutes do
   # 定期実行したい処理をrunner後にファイル指定
-  # runner "WebScraper.perform_task"
+  runner "WebScraper.perform_task"
 end
