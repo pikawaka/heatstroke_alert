@@ -15,7 +15,7 @@ class PostHeatstrokeMessageNotification
 
     messages = []
     messages.unshift("【熱中症警戒アラートが発表されました！ #{formatted_date} #{wbgt_result[WBGT_TIME]}時(最新) 】\n")
-    messages << " 【暑さ指数(WBGT): #{wbgt_result[WBGT_VALUE]}   警戒レベル: #{wbgt_result[WBGT_ALART]} 】"
+    messages << " 【暑さ指数(WBGT): #{wbgt_result[WBGT_ALART]}   警戒レベル: #{wbgt_result[WBGT_VALUE]} 】"
     messages << wbgt_result[WBGT_MSG]
     notifier = Slack::Notifier.new ENV['WEBHOOK_URL'] do
       defaults channel: "##{ENV['CHANNEL']}", username: "通知BOT"
